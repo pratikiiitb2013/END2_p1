@@ -1,6 +1,15 @@
+## END 2 Phase 1 Assignment 2 - working backpropagation on excel
+------------------------------------------------------------------------------------------------------------
 
-# TSAI_Session_2
-Assignment of TSAI_Session_2 for END2 program
+## Group : 
+1. Sunny Sinha
+2. Pratik Jain
+3. Anudeep
+4. MS
+
+----------------------
+## Notes 
+---------------------------------------------------------------------------------------------------------------------------
 
 Neural net created in Excel sheet with Learning Rate = 0.5
 
