@@ -62,7 +62,7 @@ class customMNISTDataset(Dataset):
 * __Why 29?__ Because we need 2 outputs one if image no and anther is for sum. Imgae no can vary between 0-9 and sum can vary between 0-18. So 10+19 = 29 output size.
 * Now this 29 output is divided into 10 and 19 and returned from network. These are used to check against label and sum and train the network.
 * For training, the 2 outputs are seperately checked against target values and 2 losses will be created.
-* After that sum of losses will be used to calculate the gradients and train the network.
+* After that sum of both losses will be used to calculate the gradients and train the network.
 
 ## Evaluation
 * After training we have evaluated agaist MNIST test data.
