@@ -117,4 +117,4 @@ class Network(nn.Module):
 * We have picked cross entropy loss because it combines log_softmax and nll loss in single loss. It is better suited when training for classification problem with C classes.
 * Now, for first output(image label), cross entropy is best suited because we are training for 0-9 digit images.
 * For 2nd part also, we have set up the network in such a way that we are training a classification problem with 19 classes( sum can only be between 0-18).
-* For pure regression training MSE loss is better suited.
+* Had it be the case that we have trained 2nd part(sum) in pure regresssion setting, then MSE loss would have been better suited.
