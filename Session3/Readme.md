@@ -59,4 +59,5 @@ class customMNISTDataset(Dataset):
 * Now there are 2 embeddings representing image and random no. Each of size 1X5.
 * Now, these are concatenated to create embedding of size 1X10. Now this concatenated vector represents combination of 2 inputs.
 * We further processed this through few fully connected layers to create an output of size 29.
-* __Why 29?__ Because we need 2 outputs 
+* __Why 29?__ Because we need 2 outputs one if image no and anther is for sum. Imgae no can vary between 0-9 and sum can vary between 0-18. So 10+19 = 29 output size.
+* 
