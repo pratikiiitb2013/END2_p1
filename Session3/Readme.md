@@ -25,7 +25,7 @@
 * Please refer below the code for the class.
 
 
-```py
+```python
 transform=transforms.Compose([
     transforms.ToTensor()
 ])
