@@ -63,6 +63,49 @@ class customMNISTDataset(Dataset):
 * Now this 29 output is divided into 10 and 19 and returned from network. These are used to check against label and sum and train the network.
 * For training, the 2 outputs are seperately checked against target values and 2 losses will be created.
 * After that sum of both losses will be used to calculate the gradients and train the network.
+* Following is the network details
+```python
+def conv_block(input_size, output_size, kernel_size):
+    block = nn.Sequential(
+        nn.Conv2d(in_channels=input_size, out_channels=output_size, kernel_size=kernel_size), nn.ReLU(), nn.MaxPool2d((2, 2)),
+    )
+    return block
+
+class Network(nn.Module):
+  def __init__(self):
+    super().__init__()
+    self.conv1 = conv_block(input_size=1, output_size=6, kernel_size=3)
+    self.conv2 = conv_block(input_size=6, output_size=12, kernel_size=3)
+
+    self.relu = nn.ReLU()
+    self.fc1 = nn.Linear(in_features=12*5*5, out_features=16)
+    self.fc2 = nn.Linear(in_features=16, out_features=5)
+
+    self.fc3 = nn.Linear(in_features=10, out_features=10)
+    self.fc4 = nn.Linear(in_features=10, out_features=5)
+
+    self.fc5 = nn.Linear(in_features=10, out_features=50)
+    self.fc6 = nn.Linear(in_features=50, out_features=29)
+
+
+  def forward(self, img, ohe):
+
+    img = self.conv1(img)
+    img = self.conv2(img)
+    img = img.reshape(img.shape[0], -1)  # img = img.reshape(-1, 12*5*5)
+    img = self.relu(self.fc1(img))
+    img = self.relu(self.fc2(img))
+
+    ohe = self.relu(self.fc3(ohe))
+    ohe = self.relu(self.fc4(ohe))
+    
+    x = torch.cat((img, ohe), dim=1)
+    x = self.relu(x)
+    x = self.relu(self.fc5(x))
+    x = self.fc6(x)
+    return x[:,0:10],x[:,10:]
+```
+
 
 ## Evaluation
 * After training we have evaluated agaist MNIST test data.
