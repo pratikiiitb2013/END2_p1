@@ -18,7 +18,10 @@
 * 2 outputs include 1)number that is represented by MNIST image  2)sum of MNIST image number and random no input
 
 ## Data representation and generation strategy
-* Created a custom dataset class inherited from torch Dataset class.
+* Created a custom dataset class inherited from __torch Dataset__ class.
+* Implemented __getitem__ function such that it returns image matrix(28X28), on the fly generated random no between 0-9, image label and sum of label and randon no.
+* The sum will be between 0-18. This information will be handy later in designing outout layer of NN.
+* 
 
 
 ```
