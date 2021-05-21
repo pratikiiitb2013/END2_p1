@@ -112,4 +112,9 @@ class Network(nn.Module):
 * Following are the results
 
 ## Loss function
-* Since we are checking 2 outputs and training the model, we will be using 
+* Since we are checking 2 outputs and training the model, we will be using 2 losses and summing them.
+* Two losses are calculated by using __cross entropy__ loss.
+* We have picked cross entropy loss because it combines log_softmax and nll loss in single loss. It is better suited when training for classification problem with C classes.
+* Now, for first output(image label), cross entropy is best suited because we are training for 0-9 digit images.
+* For 2nd part also, we have set up the network in such a way that we are training a classification problem with 19 classes( sum can only be between 0-18).
+* For pure regression training MSE loss is better suited.
