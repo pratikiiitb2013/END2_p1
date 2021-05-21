@@ -19,7 +19,7 @@
 
 ## Data representation and generation strategy
 * Created a custom dataset class inherited from __torch Dataset__ class.
-* Implemented __getitem__ function such that it returns image matrix(28X28), on the fly generated random no between 0-9, image label and sum of label and randon no.
+* Implemented __'__getitem__ function such that it returns image matrix(28X28), on the fly generated random no between 0-9, image label and sum of label and randon no.
 * The sum will be between 0-18. This information will be handy later in designing outout layer of NN.
 * 
 
