@@ -110,6 +110,7 @@ class Network(nn.Module):
 ## Evaluation
 * After training we have evaluated agaist MNIST test data.
 * Following are the results
+* total_correct(images): 9763/10000 total_correct(sum): 9637/10000
 
 ## Loss function
 * Since we are checking 2 outputs and training the model, we will be using 2 losses and summing them.
