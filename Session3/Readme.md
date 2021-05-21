@@ -50,3 +50,13 @@ class customMNISTDataset(Dataset):
       img_data = self.transforms(img_data)
     return img_data, rand_no, y1, y2
 ```
+
+## Network architecture details(how we are combining the 2 inputs)
+* Taking 2 seperate inputs, 1)28X28 tensor for image 2)one hot encoded vector for random no.
+* One hot vector will be of size 10 as the no can be between 0-9.
+* Processed the image part through combination of conv layers and max pool layers. Then flatten into 1D vector. Finally processed through fully connected layers to create embedding of size 1X5.
+* Processe the one hot encoded input of randon no through 2 fully connected layers to create embedding of size 1X5.
+* Now there are 2 embeddings representing image and random no. Each of size 1X5.
+* Now, these are concatenated to create embedding of size 1X10. Now this concatenated vector represents combination of 2 inputs.
+* We further processed this through few fully connected layers to create an output of size 29.
+* __Why 29?__ Because we need 2 outputs 
