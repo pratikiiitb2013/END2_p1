@@ -329,6 +329,8 @@ Negative
 
 #### Example 2 -> "I like it very much."
 ```
+classify_tweet("I like it very much.")
+
 Encoder LSTM output vector after each word: 
 after 1 word
 tensor([-2.0345e-01, -1.6616e-01, -1.1580e-01, -6.0648e-02, -3.5947e-01,
