@@ -87,3 +87,36 @@ class combining_encoder_decoder(nn.Module):
     return op
  ```
  
+ ## Training logs
+```python
+Train Loss: 1.080 | Train Acc: 55.53%
+	 Val. Loss: 1.038 |  Val. Acc: 69.20% 
+
+	Train Loss: 0.982 | Train Acc: 69.12%
+	 Val. Loss: 0.895 |  Val. Acc: 68.30% 
+
+	Train Loss: 0.873 | Train Acc: 69.12%
+	 Val. Loss: 0.850 |  Val. Acc: 68.30% 
+
+	Train Loss: 0.829 | Train Acc: 72.67%
+	 Val. Loss: 0.826 |  Val. Acc: 74.11% 
+
+	Train Loss: 0.794 | Train Acc: 77.70%
+	 Val. Loss: 0.813 |  Val. Acc: 75.89% 
+
+	Train Loss: 0.766 | Train Acc: 79.90%
+	 Val. Loss: 0.794 |  Val. Acc: 76.34% 
+
+	Train Loss: 0.739 | Train Acc: 82.35%
+	 Val. Loss: 0.788 |  Val. Acc: 75.89% 
+
+	Train Loss: 0.716 | Train Acc: 84.12%
+	 Val. Loss: 0.785 |  Val. Acc: 76.79% 
+
+	Train Loss: 0.702 | Train Acc: 85.47%
+	 Val. Loss: 0.773 |  Val. Acc: 77.68% 
+
+	Train Loss: 0.687 | Train Acc: 86.49%
+	 Val. Loss: 0.760 |  Val. Acc: 79.46%
+```
+
