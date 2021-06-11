@@ -12,7 +12,7 @@
 ---------------------------------------------------------------------------------------------------------------------------
 
 ## Question
-* Make 2 seperate classes for encoder, decoder and 1 class for combining logic.
+* Make 2 seperate classes for encoder, decoder and 1 class for combining logic
 * Design the network so that it follows following logic flow:
 
   - embedding
@@ -21,7 +21,7 @@
   - single vector -> FC layer -> Prediction
 
 ## Solution
-* Created seperate classes for Encoder and Decoder and a 3rd class which combines the seperate outputs of encoder and decoder.
+* Created seperate classes for Encoder and Decoder and a 3rd class which combines the seperate outputs of encoder and decoder
 
 #### Encoder
 * Takes sentence text -> converts to embeddings -> runs through LSTM -> get final hidden vector(context vector representing full sentence information) as output
@@ -41,10 +41,11 @@ class encoder_part(nn.Module):
 ````
 
 #### Decoder
-* Defined as sequence of individual lstm cells which runs in a loop for specified no of times.
+* Defined as sequence of individual lstm cells which runs in a loop for specified no of times
 * Takes encoder hidden vector as input
-* This input vector is sent to sequence of lstm cells( same input vector for each cell along with last lstm cell hidden output.
+* This input vector is sent to sequence of lstm cells( same input vector for each cell along with last lstm cell hidden output
 * For first lstm cell hidden and cell states are initialized to 0
+* Final lstm cell's hidden output vector is the output from Decoder
 ```python
 class decoder_part(nn.Module):
 
@@ -66,4 +67,23 @@ class decoder_part(nn.Module):
     return otpt, hx
 ```
 
-
+#### Combining encoder and decoder classes outputs
+* Created a 3rd class to design the full logic and use encoder/decoder outputs
+* In this class text is taken as input -> passed to encoder ->encodr output passed to decoder -> decoder output passed to fully connected layer to give output of size equals to no of classification classes.
+```python
+class combining_encoder_decoder(nn.Module):
+  
+  def __init__(self, encoder, decoder, hidden_dim, output_dim):
+      super().__init__()
+      self.encoder = encoder
+      self.decoder = decoder
+      self.fc = nn.Linear(hidden_dim, output_dim)
+  
+  def forward(self,src,src_len):
+    enc_packed_outputs, enc_hidden = self.encoder(src,src_len)
+    dec_otpt, dec_hidden = self.decoder(enc_hidden)
+    dense_outputs = self.fc(dec_hidden)
+    op = F.softmax(dense_outputs, dim=1)
+    return op
+ ```
+ 
