@@ -43,7 +43,7 @@ class encoder_part(nn.Module):
 #### Decoder
 * Defined as sequence of individual lstm cells which runs in a loop for specified no of times
 * Takes encoder hidden vector as input
-* This input vector is sent to sequence of lstm cells( same input vector for each cell along with last lstm cell hidden output
+* This input vector is sent to sequence of lstm cells( same input vector for each cell along with last lstm cell hidden output)
 * For first lstm cell hidden and cell states are initialized to 0
 * Final lstm cell's hidden output vector is the output from Decoder
 ```python
@@ -69,7 +69,7 @@ class decoder_part(nn.Module):
 
 #### Combining encoder and decoder classes outputs
 * Created a 3rd class to design the full logic and use encoder/decoder outputs
-* In this class text is taken as input -> passed to encoder ->encodr output passed to decoder -> decoder output passed to fully connected layer to give output of size equals to no of classification classes.
+* In this class text is taken as input -> passed to encoder ->encoder output passed to decoder -> decoder output passed to fully connected layer to give output of size equals to no of classification classes.
 ```python
 class combining_encoder_decoder(nn.Module):
   
@@ -90,33 +90,33 @@ class combining_encoder_decoder(nn.Module):
  ## Training logs
 ```python
 Train Loss: 1.080 | Train Acc: 55.53%
-	 Val. Loss: 1.038 |  Val. Acc: 69.20% 
+ Val. Loss: 1.038 |  Val. Acc: 69.20% 
 
-	Train Loss: 0.982 | Train Acc: 69.12%
-	 Val. Loss: 0.895 |  Val. Acc: 68.30% 
+Train Loss: 0.982 | Train Acc: 69.12%
+ Val. Loss: 0.895 |  Val. Acc: 68.30% 
 
-	Train Loss: 0.873 | Train Acc: 69.12%
-	 Val. Loss: 0.850 |  Val. Acc: 68.30% 
+Train Loss: 0.873 | Train Acc: 69.12%
+ Val. Loss: 0.850 |  Val. Acc: 68.30% 
 
-	Train Loss: 0.829 | Train Acc: 72.67%
-	 Val. Loss: 0.826 |  Val. Acc: 74.11% 
+Train Loss: 0.829 | Train Acc: 72.67%
+ Val. Loss: 0.826 |  Val. Acc: 74.11% 
 
-	Train Loss: 0.794 | Train Acc: 77.70%
-	 Val. Loss: 0.813 |  Val. Acc: 75.89% 
+Train Loss: 0.794 | Train Acc: 77.70%
+ Val. Loss: 0.813 |  Val. Acc: 75.89% 
 
-	Train Loss: 0.766 | Train Acc: 79.90%
-	 Val. Loss: 0.794 |  Val. Acc: 76.34% 
+Train Loss: 0.766 | Train Acc: 79.90%
+ Val. Loss: 0.794 |  Val. Acc: 76.34% 
 
-	Train Loss: 0.739 | Train Acc: 82.35%
-	 Val. Loss: 0.788 |  Val. Acc: 75.89% 
+Train Loss: 0.739 | Train Acc: 82.35%
+ Val. Loss: 0.788 |  Val. Acc: 75.89% 
 
-	Train Loss: 0.716 | Train Acc: 84.12%
-	 Val. Loss: 0.785 |  Val. Acc: 76.79% 
+Train Loss: 0.716 | Train Acc: 84.12%
+ Val. Loss: 0.785 |  Val. Acc: 76.79% 
 
-	Train Loss: 0.702 | Train Acc: 85.47%
-	 Val. Loss: 0.773 |  Val. Acc: 77.68% 
+Train Loss: 0.702 | Train Acc: 85.47%
+ Val. Loss: 0.773 |  Val. Acc: 77.68% 
 
-	Train Loss: 0.687 | Train Acc: 86.49%
-	 Val. Loss: 0.760 |  Val. Acc: 79.46%
+Train Loss: 0.687 | Train Acc: 86.49%
+ Val. Loss: 0.760 |  Val. Acc: 79.46%
 ```
 
