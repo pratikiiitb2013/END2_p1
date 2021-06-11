@@ -15,8 +15,8 @@
 * Make 2 seperate classes for encoder, decoder and 1 class for combining logic.
 * Design the network such that:
 
-  embedding
-  word from a sentence +last hidden vector -> encoder -> single vector
-  single vector + last hidden vector -> decoder -> single vector
-  single vector -> FC layer -> Prediction
+  - embedding
+  - word from a sentence +last hidden vector -> encoder -> single vector
+  - single vector + last hidden vector -> decoder -> single vector
+  - single vector -> FC layer -> Prediction
 
