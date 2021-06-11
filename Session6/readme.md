@@ -14,4 +14,4 @@
 ## Question
 * Make 2 seperate classes for encoder, decoder and 1 class for combining logic.
 * Design the network such that:
-*   ss
+** sss
